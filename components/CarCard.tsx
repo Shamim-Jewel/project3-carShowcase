@@ -1,12 +1,15 @@
+"use client";
 import { CarProps } from "@/types";
 import { calculateCarRent } from "@/utils/carRent";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import { CustomButton } from ".";
 interface CarCardProps {
   car: CarProps;
 }
 
 const CarCard = ({ car }: CarCardProps) => {
+  const [IsOpen, setIsOpen] = useState(false);
   const {
     city_mpg,
     combination_mpg,
@@ -40,7 +43,7 @@ const CarCard = ({ car }: CarCardProps) => {
           className="object-contain"
         />
       </div>
-      <div className="relative flex mt-2 w-full ">
+      <div className="relative flex mt-2 w-full group">
         <div className="flex w-full justify-between text-gray-500 group-hover:invisible  ">
           <div className="flex flex-col justify-center items-center gap-2">
             <Image
@@ -61,6 +64,13 @@ const CarCard = ({ car }: CarCardProps) => {
             <Image src="/gas.svg" alt="gas" width={20} height={20} />
             <p className="text-[14px]">{city_mpg}MPG</p>
           </div>
+        </div>
+        <div className="car-card__btn-container">
+          <CustomButton
+            title="view more"
+            handleClick={() => setIsOpen(true)}
+            containerStyle="w-full py-[14px] rounded-full bg-primary-blue text-white "
+          />
         </div>
       </div>
     </div>
