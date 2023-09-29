@@ -5,6 +5,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { CustomButton } from ".";
 import CarDetails from "./CarDetails";
+import { generateCarImageUrl } from "@/utils/carData";
 interface CarCardProps {
   car: CarProps;
 }
@@ -38,7 +39,7 @@ const CarCard = ({ car }: CarCardProps) => {
       </p>
       <div className="relative w-full h-40 my-3 obvject-contain">
         <Image
-          src="/hero.png"
+          src={generateCarImageUrl(car)}
           fill
           alt="car-model"
           className="object-contain"

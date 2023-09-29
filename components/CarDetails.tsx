@@ -4,6 +4,7 @@ import { Fragment } from "react";
 import { CarProps } from "@/types";
 import React from "react";
 import Image from "next/image";
+import { generateCarImageUrl } from "@/utils/carData";
 interface CarDetailsProps {
   isOpen: boolean;
   closeModal: () => void;
@@ -57,7 +58,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                   <div className="flex flex-1 gap-3 flex-col">
                     <div className="relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg">
                       <Image
-                        src="/hero.png"
+                        src={generateCarImageUrl(car, "angle")}
                         fill
                         alt="car-model"
                         className="object-contain"
@@ -66,7 +67,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                     <div className="flex  gap-3">
                       <div className=" flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src="/hero.png"
+                          src={generateCarImageUrl(car, "angle")}
                           fill
                           alt="car-model"
                           className="object-contain"
@@ -74,7 +75,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                       </div>
                       <div className=" flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src="/hero.png"
+                          src={generateCarImageUrl(car, "angle")}
                           fill
                           alt="car-model"
                           className="object-contain"
@@ -82,7 +83,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                       </div>
                       <div className=" flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src="/hero.png"
+                          src={generateCarImageUrl(car, "angle")}
                           fill
                           alt="car-model"
                           className="object-contain"

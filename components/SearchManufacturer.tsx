@@ -69,7 +69,6 @@ const SearchManufacturer = ({
           </Transition>
         </div>
       </Combobox>
-      <button>Search</button>
     </div>
   );
 };
