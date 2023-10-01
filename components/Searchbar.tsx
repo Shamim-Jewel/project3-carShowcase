@@ -49,7 +49,7 @@ const Searchbar = () => {
 
   return (
     <form action="" className="searchbar" onSubmit={handleSearch}>
-      <div className="search__item">
+      <div className="searchbar__item">
         <SearchManufacturer
           manufacturer={manufacturer}
           setManufacturer={setManufacturer}
@@ -70,7 +70,7 @@ const Searchbar = () => {
           value={model}
           onChange={(e) => setModel(e.target.value)}
           placeholder="Tiguan"
-          className="searchbar__input"
+          className="searchbar__input -ml-8"
         />
         <SearchButton otherclasses="sm:hidden" />
       </div>

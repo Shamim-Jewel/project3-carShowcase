@@ -33,5 +33,10 @@ export interface FiltersProps {
   limit: number;
 }
 export interface CustomFilterProps {
+  options: option[];
   title: string;
+}
+export interface option {
+  title: string;
+  value: string | number;
 }
